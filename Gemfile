@@ -23,6 +23,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'rails_12factor', group: :production
 gem "omniauth-google-oauth2"
 gem 'figaro'
+gem 'faraday'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
@@ -31,10 +32,18 @@ gem 'figaro'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+group :test do
+  gem 'shoulda', '~> 3.5'
+  gem 'shoulda-matchers', '~> 2.0'
+  gem 'simplecov'
+end
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
   gem 'capybara'
+  gem 'vcr'
+  gem 'webmock'
 end
 
 group :development do
