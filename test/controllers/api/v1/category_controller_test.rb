@@ -1,0 +1,14 @@
+require 'test_helper'
+
+class Api::V1::CategoryControllerTest < ActionDispatch::IntegrationTest
+  test "Create categories" do
+    post "/api/v1/categories?name=music"
+    assert_response :success
+
+    category = JSON.parse(response.body)
+
+    assert_equal 1, Category.count
+    assert_equal "music", category.name
+  end
+
+end
