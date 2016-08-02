@@ -1,4 +1,7 @@
-<h1> Welcome <%= @user.first_name %> </h1>
+<h1> Welcome
+  <% if @user.first_name %>
+    <%= @user.first_name %>
+  <% end %> </h1>
 <h3>This is your first time visiting! </h3>
 <p>
   Please Setup your categories

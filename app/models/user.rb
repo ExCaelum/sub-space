@@ -1,10 +1,11 @@
 class User < ApplicationRecord
-  # validates :refresh_token, presence: true
-  # validates :name, presence: true
-  # validates :first_name, presence: true
-  # validates :last_name, presence: true
-  # validates :uid, presence: true
-  # validates :token, presence: true
+  validates :refresh_token, presence: true
+  validates :name, presence: true
+  validates :uid, presence: true
+  validates :token, presence: true
+
+  has_many :subscriptions
+  has_many :categories
 
   def self.from_omniauth(auth_info)
   where(uid: auth_info[:uid]).create do |new_user|
