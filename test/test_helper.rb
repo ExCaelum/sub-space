@@ -7,6 +7,7 @@ require 'minitest/pride'
 require 'capybara/rails'
 require 'webmock/test_unit'
 require 'vcr'
+require "mocha/mini_test"
 
 class ActiveSupport::TestCase
   # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.

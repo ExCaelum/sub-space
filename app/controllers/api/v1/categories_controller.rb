@@ -1,4 +1,4 @@
-class Api::V1::CategoriesController
+class Api::V1::CategoriesController < ApplicationController
 
   def create
     category = current_user.categories.new(category_params)

@@ -37,6 +37,7 @@ group :test do
   gem 'shoulda-matchers', '~> 2.0'
   gem 'simplecov'
   gem 'test-unit'
+  gem 'mocha'
 end
 
 group :development, :test do
