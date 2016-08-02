@@ -21,13 +21,13 @@ http_interactions:
       message: OK
     headers:
       Expires:
-      - Tue, 02 Aug 2016 03:41:50 GMT
+      - Tue, 02 Aug 2016 03:45:30 GMT
       Date:
-      - Tue, 02 Aug 2016 03:41:50 GMT
+      - Tue, 02 Aug 2016 03:45:30 GMT
       Cache-Control:
       - private, max-age=0, must-revalidate, no-transform
       Etag:
-      - '"I_8xdZu766_FSaexEaDXTIfEWc0/w42wwVxfhuQVcp03ptqnOBTyvOE"'
+      - '"I_8xdZu766_FSaexEaDXTIfEWc0/ZQxvxXjHi31nVOgE6ExAUgzD_iM"'
       Vary:
       - Origin
       - X-Origin
@@ -46,13 +46,13 @@ http_interactions:
       Alternate-Protocol:
       - 443:quic
       Alt-Svc:
-      - quic=":443"; ma=2592000; v="36,35,34,33,32,31,30"
+      - quic=":443"; ma=2592000; v="36,35,34,33,32,31,30,29,28,27,26,25"
     body:
       encoding: ASCII-8BIT
       string: !binary |-
         ewogImtpbmQiOiAieW91dHViZSNzdWJzY3JpcHRpb25MaXN0UmVzcG9uc2Ui
-        LAogImV0YWciOiAiXCJJXzh4ZFp1NzY2X0ZTYWV4RWFEWFRJZkVXYzAvdzQy
-        d3dWeGZodVFWY3AwM3B0cW5PQlR5dk9FXCIiLAogIm5leHRQYWdlVG9rZW4i
+        LAogImV0YWciOiAiXCJJXzh4ZFp1NzY2X0ZTYWV4RWFEWFRJZkVXYzAvWlF4
+        dnhYakhpMzFuVk9nRTZFeEFVZ3pEX2lNXCIiLAogIm5leHRQYWdlVG9rZW4i
         OiAiQ0RJUUFBIiwKICJwYWdlSW5mbyI6IHsKICAidG90YWxSZXN1bHRzIjog
         OTYsCiAgInJlc3VsdHNQZXJQYWdlIjogNTAKIH0sCiAiaXRlbXMiOiBbCiAg
         ewogICAia2luZCI6ICJ5b3V0dWJlI3N1YnNjcmlwdGlvbiIsCiAgICJldGFn
@@ -1444,7 +1444,7 @@ http_interactions:
         MHhmZmZmZmYvcGhvdG8uanBnIgogICAgIH0KICAgIH0KICAgfQogIH0KIF0K
         fQo=
     http_version: 
-  recorded_at: Tue, 02 Aug 2016 03:41:50 GMT
+  recorded_at: Tue, 02 Aug 2016 03:45:30 GMT
 - request:
     method: get
     uri: https://www.googleapis.com/youtube/v3/subscriptions?maxResults=50&mine=true&pageToken=CDIQAA&part=snippet
@@ -1466,13 +1466,13 @@ http_interactions:
       message: OK
     headers:
       Expires:
-      - Tue, 02 Aug 2016 03:41:51 GMT
+      - Tue, 02 Aug 2016 03:45:31 GMT
       Date:
-      - Tue, 02 Aug 2016 03:41:51 GMT
+      - Tue, 02 Aug 2016 03:45:31 GMT
       Cache-Control:
       - private, max-age=0, must-revalidate, no-transform
       Etag:
-      - '"I_8xdZu766_FSaexEaDXTIfEWc0/ywkkSgla_5RYtr_Sgxckl8Mc3xU"'
+      - '"I_8xdZu766_FSaexEaDXTIfEWc0/--1TcRlA3PfXLfzrO2gtQKX1iAg"'
       Vary:
       - Origin
       - X-Origin
@@ -1491,13 +1491,13 @@ http_interactions:
       Alternate-Protocol:
       - 443:quic
       Alt-Svc:
-      - quic=":443"; ma=2592000; v="36,35,34,33,32,31,30"
+      - quic=":443"; ma=2592000; v="36,35,34,33,32,31,30,29,28,27,26,25"
     body:
       encoding: ASCII-8BIT
       string: !binary |-
         ewogImtpbmQiOiAieW91dHViZSNzdWJzY3JpcHRpb25MaXN0UmVzcG9uc2Ui
-        LAogImV0YWciOiAiXCJJXzh4ZFp1NzY2X0ZTYWV4RWFEWFRJZkVXYzAveXdr
-        a1NnbGFfNVJZdHJfU2d4Y2tsOE1jM3hVXCIiLAogInByZXZQYWdlVG9rZW4i
+        LAogImV0YWciOiAiXCJJXzh4ZFp1NzY2X0ZTYWV4RWFEWFRJZkVXYzAvLS0x
+        VGNSbEEzUGZYTGZ6ck8yZ3RRS1gxaUFnXCIiLAogInByZXZQYWdlVG9rZW4i
         OiAiQ0RJUUFRIiwKICJwYWdlSW5mbyI6IHsKICAidG90YWxSZXN1bHRzIjog
         OTYsCiAgInJlc3VsdHNQZXJQYWdlIjogNTAKIH0sCiAiaXRlbXMiOiBbCiAg
         ewogICAia2luZCI6ICJ5b3V0dWJlI3N1YnNjcmlwdGlvbiIsCiAgICJldGFn
@@ -2757,5 +2757,5 @@ http_interactions:
         Yy1rLW5vLXJqLWMweGZmZmZmZi9waG90by5qcGciCiAgICAgfQogICAgfQog
         ICB9CiAgfQogXQp9Cg==
     http_version: 
-  recorded_at: Tue, 02 Aug 2016 03:41:51 GMT
+  recorded_at: Tue, 02 Aug 2016 03:45:31 GMT
 recorded_with: VCR 3.0.3

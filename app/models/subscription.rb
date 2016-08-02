@@ -14,18 +14,20 @@ class Subscription < ApplicationRecord
     Subscription.all
   end
 
+  private
+
   def self.api_all(current_user)
     response = service(current_user.token).subscriptions
-    subscriptions = response["items"]
-    subscriptions.each do |subscription|
-      Subscription.create(sub_hash(subscription, current_user))
-    end
+    create_subs(response["items"], current_user)
     while response["nextPageToken"]
       response = service(current_user.token).more_subscriptions(response["nextPageToken"])
-      subscriptions = response["items"]
-      subscriptions.each do |subscription|
-        Subscription.create(sub_hash(subscription, current_user))
-      end
+      create_subs(response["items"], current_user)
+    end
+  end
+
+  def self.create_subs(subscriptions, current_user)
+    subscriptions.each do |subscription|
+      Subscription.create(sub_hash(subscription, current_user))
     end
   end
 
