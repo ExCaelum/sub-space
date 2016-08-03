@@ -10,10 +10,10 @@ $(document).ready(function(){
       success: function(newCategory){
         $("#categories").append(
           "<div class='category' data-post-id='" + newCategory.id + "'>" + newCategory.name + "<br><br></div>"
-        )
-        $("#dropdowns").append(
+        );
+        $(".dropdown-menu").append(
           "<a class='dropdown-item category-option' data-category-id='" + newCategory.id + "' href='#'>" + newCategory.name + "</a><br>"
-        )
+        );
       }
     })
 
@@ -22,16 +22,20 @@ $(document).ready(function(){
   $(".dropdown-menu").on('click', ".category-option", function(){
     var categoryId = $(this).data("category-id")
     var subscriptionId = $(this).parent().data("subscription-id")
+    $.ajax({
+      url: "/api/v1/subscriptions/" + subscriptionId,
+      method: "PATCH",
+      dataType: "JSON",
+      data: {category_id: categoryId},
+      success: function(newSubscription){
+        console.log(newSubscription);
+        var val = $("#cat-badge-" + newSubscription.category_id).text()
+        val = parseInt(val)+1
+        $("#cat-badge-" + newSubscription.category_id).html(val)
+        $("#sub-" + newSubscription.id).hide();
 
-
-    // send ajax with cat-id to update the sub (PATCH /api/v1/subscriptions/:sub-id)
-    // ajax returns api call which includes the updated sub data
-    // hide the changed sub ( $('#sub-id-box')).hide(); )
-    // change div value of #cat-id-badge to +1 its original value
-
-    // <div id="cat-<%= cat.id%>-badge">
-    //   <%= cat.subs.count %>
-    // </div>
+      }
+    })
   })
 
 });

@@ -18,21 +18,31 @@
     </div>
     <div class="row">
       <div class="col-md-6 text-center" id="categories">
-
+        <% @categories.each do |cat| %>
+        <div class='category' data-post-id="<%= cat.id %>">
+          <%= cat.name %>
+          <div id="cat-badge-<%= cat.id %>"><%= cat.subscriptions.count %></div>
+          <br><br>
+        </div>
+        <% end %>
       </div>
       <div class="col-md-4 col-md-offset-2" id="subscriptions">
         <% @subscriptions.each do |subscription| %>
-          <div class='col-md-3 subscription' data-post-id="<%= subscription.channel_id%>">
-            <%= subscription.title %>
-          </div>
-          <div class="dropdown col-md-9">
-            <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Categories
-            </button>
-            <div class="dropdown-menu" data-subscription-id="<%= subscription.id %>"  aria-labelledby="dropdownMenuButton" id="dropdowns">
-
+          <div id="sub-<%= subscription.id %>">
+            <div class='col-md-3 subscription' data-post-id="<%= subscription.channel_id%>">
+              <%= subscription.title %>
             </div>
-            <br><br>
+            <div class="dropdown col-md-9">
+              <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Categories
+              </button>
+              <div class="dropdown-menu" data-subscription-id="<%= subscription.id %>"  aria-labelledby="dropdownMenuButton" id="dropdowns">
+                <% @categories.each do |cat| %>
+                  <a class='dropdown-item category-option' data-category-id="<%= cat.id %>" href='#'> <%= cat.name %> </a><br>
+                <% end %>
+              </div>
+              <br><br>
+            </div>
           </div>
         <% end %>
       </div>

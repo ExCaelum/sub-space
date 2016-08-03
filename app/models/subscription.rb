@@ -10,8 +10,10 @@ class Subscription < ApplicationRecord
   end
 
   def self.get_subscriptions(current_user)
-    api_all(current_user)
-    Subscription.all
+    if (current_user.subscriptions.all.count == 0)
+      api_all(current_user)
+    end
+      Subscription.where(category_id: nil)
   end
 
   private
