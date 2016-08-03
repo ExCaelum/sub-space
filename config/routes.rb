@@ -6,9 +6,11 @@ Rails.application.routes.draw do
   get '/dashboard', as: "dashboard", to: "users#show"
   get '/setup', as: 'setup', to: "setup#show"
 
+
   namespace :api do
     namespace :v1, defaults: {format: :json} do
       resources :categories, only: [:create]
+      resources :subscriptions, only: [:update]
     end
   end
 

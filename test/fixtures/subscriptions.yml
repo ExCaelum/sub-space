@@ -1,15 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-# 
-# one:
-#   user: one
-#   category: one
-#   title: MyString
-#   channel_id: MyString
-#   thumbnail: MyString
 #
-# two:
-#   user: two
-#   category: two
-#   title: MyString
-#   channel_id: MyString
-#   thumbnail: MyString
+one:
+  id: 1
+  user: one
+  category: null
+  title: MyYoutube
+  channel_id: agklep494g
+  thumbnail: www.thumbnail.com

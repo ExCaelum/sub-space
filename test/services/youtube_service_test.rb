@@ -20,9 +20,9 @@ class YoutubeServiceTest < ActiveSupport::TestCase
     VCR.use_cassette('youtube_service#more_subscriptions') do
       user = users(:two)
       subscriptions = Subscription.get_subscriptions(user)
-      subscription = Subscription.first
+      subscription = Subscription.all[1]
 
-      assert_equal 96, subscriptions.count
+      assert_equal 97, subscriptions.count
       assert_equal "UKOGmonkey", subscription.title
       assert_equal "UC0gElXJLp_puscXA7vW11sg", subscription.channel_id
       assert_equal "https://yt3.ggpht.com/-pcPnpor424U/AAAAAAAAAAI/AAAAAAAAAAA/ogrYYLZh8N4/s88-c-k-no-rj-c0xffffff/photo.jpg", subscription.thumbnail

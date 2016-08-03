@@ -9,7 +9,7 @@ class Api::V1::CategoryControllerTest < ActionDispatch::IntegrationTest
 
     category = JSON.parse(response.body)
 
-    assert_equal 1, Category.count
+    assert_equal 2, Category.count
     assert_equal "music", category["name"]
   end
 

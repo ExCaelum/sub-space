@@ -1,8 +1,41 @@
-<h1> Welcome
-  <% if @user.first_name %>
-    <%= @user.first_name %>
-  <% end %> </h1>
-<h3>This is your first time visiting! </h3>
-<p>
-  Please Setup your categories
-</p>
+<div class="container-fluid">
+  <div class="text-center">
+    <h1> Welcome
+      <% if @user.first_name %>
+        <%= @user.first_name %>
+      <% end %> </h1>
+    <h3>This is your first time visiting! </h3>
+    <p>
+      Please Setup your categories
+      <div class="row">
+        <div class="col-md-2 col-md-offset-5">
+          <div class="form-group">
+            <input class="form-control" type="text" id="category-name">
+            <input class="btn btn-default" id="create-category" type="button" name="submit" value="Create Category">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6 text-center" id="categories">
+
+      </div>
+      <div class="col-md-4 col-md-offset-2" id="subscriptions">
+        <% @subscriptions.each do |subscription| %>
+          <div class='col-md-3 subscription' data-post-id="<%= subscription.channel_id%>">
+            <%= subscription.title %>
+          </div>
+          <div class="dropdown col-md-9">
+            <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Categories
+            </button>
+            <div class="dropdown-menu" data-subscription-id="<%= subscription.id %>"  aria-labelledby="dropdownMenuButton" id="dropdowns">
+
+            </div>
+            <br><br>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </p>
+</div>
