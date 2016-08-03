@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+#
+one:
+  id: 1
+  user: one
+  category: null
+  title: MyYoutube
+  channel_id: agklep494g
+  thumbnail: www.thumbnail.com

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: Parker Phillips
+  uid: <%= ENV["UID"] %>
+  token: <%= ENV["ACCESS_TOKEN"] %>
+  refresh_token: <%= ENV["REFRESH_TOKEN"] %>
+
+two:
+  name: Modifiably
+  uid: <%= ENV["ALT_UID"] %>
+  token: <%= ENV["ALTERNATIVE_TOKEN"] %>
+  refresh_token: <%= ENV["ALT_REFRESH"] %>
