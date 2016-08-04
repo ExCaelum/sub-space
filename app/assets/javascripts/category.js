@@ -9,7 +9,7 @@ $(document).ready(function(){
       data: {name: categoryName},
       success: function(newCategory){
         $("#categories").append(
-          "<div class='category' data-post-id='" + newCategory.id + "'>" + newCategory.name + "<br><br></div>"
+          "<div class='category' data-post-id='" + newCategory.id + "'>" + newCategory.name + "<div id='cat-badge-" + newCategory.id + "'>" + 0 + "</div><br><br></div>"
         );
         $(".dropdown-menu").append(
           "<a class='dropdown-item category-option' data-category-id='" + newCategory.id + "' href='#'>" + newCategory.name + "</a><br>"
