@@ -16,6 +16,7 @@
     </div>
     <div class="row">
       <div class="col-md-6 text-center" id="categories">
+        <h3>Categories</h3>
         <% @categories.each do |cat| %>
         <div class='category' data-post-id="<%= cat.id %>">
           <%= cat.name %>
@@ -25,10 +26,11 @@
         <% end %>
       </div>
       <div class="col-md-4 col-md-offset-2" id="subscriptions">
+        <h3>Subscriptions</h3>
         <% @subscriptions.each do |subscription| %>
           <div id="sub-<%= subscription.id %>">
             <div class='col-md-6 subscription' data-post-id="<%= subscription.channel_id%>">
-              <%= link_to subscription.title, "https://www.youtube.com/channel/#{subscription.channel_id}" %>
+              <%= link_to subscription.title, "https://www.youtube.com/channel/#{subscription.channel_id}", target: "_blank" %>
             </div>
             <div class="dropdown col-md-6">
               <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
