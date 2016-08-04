@@ -5,7 +5,7 @@
       <br><br>
       <p>
         <% @categories.each do |cat| %>
-        <%= link_to cat.name, category_path(cat) %>
+        <%= link_to cat.name, category_path(cat), class: "text-muted" %>
         <br>
         <% end %>
       </p>
