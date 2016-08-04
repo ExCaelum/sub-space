@@ -1,7 +1,10 @@
 class UsersController < ApplicationController
 
-  def show
-    @user = current_user
+  def index
+    if current_user
+      @user = current_user
+      @categories = current_user.categories
+    end
   end
 
 end

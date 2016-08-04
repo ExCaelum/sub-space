@@ -1,0 +1,15 @@
+<div class="container-fluid">
+  <% if @user %>
+      <h1> Welcome <%= @user.first_name %> </h1>
+      <%= link_to "Setup Categories", setup_path, class: "btn btn-info" %>
+      <br><br>
+      <p>
+        <% @categories.each do |cat| %>
+        <%= link_to cat.name, category_path(cat) %>
+        <br>
+        <% end %>
+      </p>
+  <% else %>
+    <h1 class="text-center"> Welcome to SubSpace! </h1>
+  <% end %>
+</div>
