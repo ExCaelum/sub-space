@@ -4,9 +4,8 @@
       <% if @user.first_name %>
         <%= @user.first_name %>
       <% end %> </h1>
-    <h3>This is your first time visiting! </h3>
     <p>
-      Please Setup your categories
+      <%= link_to "Complete!", dashboard_path, class: "btn btn-success" %>
       <div class="row">
         <div class="col-md-2 col-md-offset-5">
           <div class="form-group">
@@ -30,7 +29,7 @@
         <% @subscriptions.each do |subscription| %>
           <div id="sub-<%= subscription.id %>">
             <div class='col-md-3 subscription' data-post-id="<%= subscription.channel_id%>">
-              <%= subscription.title %>
+              <%= link_to subscription.title, "https://www.youtube.com/channel/#{subscription.channel_id}" %>
             </div>
             <div class="dropdown col-md-9">
               <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

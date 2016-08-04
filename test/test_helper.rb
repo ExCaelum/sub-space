@@ -17,5 +17,18 @@ class ActiveSupport::TestCase
   VCR.configure do |config|
     config.cassette_library_dir = "test/cassettes"
     config.hook_into :webmock
+    config.allow_http_connections_when_no_cassette = true
+  end
+
+  def stub_omniauth
+    OmniAuth.config.test_mode = true
+    OmniAuth.config.mock_auth[:google_oauth2] = OmniAuth::AuthHash.new({uid: "12345",
+                                                                        info: {
+                                                                          name: "Parker Phillips",
+                                                                          first_name: "Parker",
+                                                                          last_name: "Phillips"},
+                                                                        credentials: {
+                                                                          token: "123456789",
+                                                                          refresh_token: "987654321"}})
   end
 end

@@ -3,7 +3,7 @@
 one:
   id: 1
   user: one
-  category: null
+  category: one
   title: MyYoutube
   channel_id: agklep494g
   thumbnail: www.thumbnail.com

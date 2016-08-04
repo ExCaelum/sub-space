@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
 
-  root :to => "root#show"
+  root :to => "users#index"
   get '/auth/google_oauth2/callback', to: "sessions#create"
   get '/auth/google_oauth2', as: "google_login"
-  get '/dashboard', as: "dashboard", to: "users#show"
+  get '/dashboard', as: "dashboard", to: "users#index"
   get '/setup', as: 'setup', to: "setup#show"
+  delete '/logout', to: 'sessions#destroy'
+  resources :categories, only: [:show]
 
 
   namespace :api do
