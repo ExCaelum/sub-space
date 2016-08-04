@@ -6,7 +6,7 @@ class Subscription < ApplicationRecord
 
 
   def self.service(token)
-    @service ||= YoutubeService.new(token)
+    @service = YoutubeService.new(token)
   end
 
   def self.get_subscriptions(current_user)
@@ -29,13 +29,12 @@ class Subscription < ApplicationRecord
 
   def self.create_subs(subscriptions, current_user)
     subscriptions.each do |subscription|
-      Subscription.create(sub_hash(subscription, current_user))
+      current_user.subscriptions.create(sub_hash(subscription))
     end
   end
 
-  def self.sub_hash(subscription, current_user)
+  def self.sub_hash(subscription)
     {
-      user: current_user,
       category: nil,
       title: subscription["snippet"]["title"],
       channel_id: subscription["snippet"]["resourceId"]["channelId"],
