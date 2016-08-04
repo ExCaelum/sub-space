@@ -1,0 +1,13 @@
+<div class="container-fluid">
+  <div class="text-center">
+    <h1> <%= @category.name %> </h1>
+  </div>
+  <p>
+    <% @subscriptions.each do |subscription| %>
+      <div class="col-md-3 text-center">
+        <%= image_tag(subscription.thumbnail) %> <%= link_to subscription.title, "https://www.youtube.com/channel/#{subscription.channel_id}" %>
+        <br><br>
+      </div>
+    <% end %>
+  </p>
+</div>
